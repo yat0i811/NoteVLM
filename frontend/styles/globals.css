@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-canvas text-slate-900;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.markdown-body {
+  max-width: none;
+  color: rgb(71 85 105);
+  background-color: transparent;
+}
+
+.markdown-body p,
+.markdown-body li {
+  white-space: pre-wrap;
+}
