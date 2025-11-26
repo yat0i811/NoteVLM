@@ -15,11 +15,11 @@ NoteVLM は PDF / 画像をアップロードして Qwen3-VL / Deepseek-OCR / Ch
 - 必要に応じて Hugging Face Hub トークン
 
 ## 使い方
-1. `.env.backend` を編集し、CORS、利用するモデル、vLLM / Deepseek-OCR / Chandra の接続先を設定します。
-2. 必要なら `NEXT_PUBLIC_API_URL`（任意で `NEXT_PUBLIC_DOWNLOAD_URL`）を `.env.local` などで指定します。
-3. `./start.sh` を実行するとバックエンドとフロントエンド、オンデマンド起動用の vLLM / Deepseek / Chandra コンテナが prepare 状態になります。
-4. ブラウザで `http://localhost:3003` にアクセスします。
-5. 停止は `./stop.sh` を実行します。
+1. `.env.backend.example`を`.env.backend`にする．& HUGGINGFACE_HUB_TOKENを入力
+2. `.env.frontend.example`を`.env.frontend`にする．
+3. `./start.sh` を実行するとバックエンドとフロントエンド、オンデマンド起動用の vLLM / Deepseek / Chandra コンテナが prepare 状態になる.
+4. ブラウザで `http://localhost:3003`or`http://192.168.29.16:3003`にアクセス.
+5. 停止は `./stop.sh` を実行.
 
 ## 環境変数サンプル
 
