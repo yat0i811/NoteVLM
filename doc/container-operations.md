@@ -37,3 +37,9 @@ NoteVLM の各コンテナはリポジトリ直下の `docker-compose.yml` で�
 - **ボリュームも含めて完全削除**: `docker compose -f docker-compose.yml down --volumes --remove-orphans`
 - **ビルドキャッシュ／未使用リソース削除**: `docker system prune -af`
 - **ストレージ初期化**: `rm -rf storage/app.db storage/uploads/* storage/documents/* storage/layout-images/* storage/logs/*`（実行前に必要なデータをバックアップしてください）
+
+# ネットワークを使っているコンテナを強制停止
+docker kill $(docker ps -q --filter network=notevlm_default)
+
+# 完全終了（コンテナ＋ネットワーク＋ボリューム）
+docker compose -f docker-compose.yml down --volumes --remove-orphans
