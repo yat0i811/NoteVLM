@@ -500,7 +500,7 @@ function LayoutModeEditor({ document, onSave }: LoadedDocumentEditorProps) {
           <textarea
             value={currentPageText}
             onChange={(event) => updatePageText(event.target.value)}
-            className="min-h-[360px] w-full grow resize-none rounded-xl border border-slate-200 bg-white/80 p-4 text-sm text-slate-700 shadow-inner focus:outline-none"
+            className="min-h-[360px] xl:min-h-[600px] w-full grow resize-none rounded-xl border border-slate-200 bg-white/80 p-4 text-sm text-slate-700 shadow-inner focus:outline-none"
             placeholder="OCRで取得した内容が表示されます。誤りがあれば修正してください。"
           />
         ) : (
@@ -515,7 +515,7 @@ function LayoutModeEditor({ document, onSave }: LoadedDocumentEditorProps) {
               <div className="relative border-b border-slate-300/40 px-4 py-3 text-xs font-medium uppercase tracking-wide text-slate-700 shadow-sm">
                 抽出テキストプレビュー
               </div>
-              <div className="relative max-h-[620px] overflow-auto p-5 text-sm leading-relaxed text-slate-900">
+              <div className="relative max-h-[620px] xl:max-h-[800px] overflow-auto p-5 text-sm leading-relaxed text-slate-900">
                 {pagePreviewContent}
               </div>
             </div>

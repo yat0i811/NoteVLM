@@ -80,7 +80,7 @@ export default function FilePreview({ upload, document }: FilePreviewProps) {
     }
     if (source.mime.startsWith("image/")) {
       return (
-        <div className="max-h-[480px] overflow-auto rounded-lg border border-slate-200 bg-slate-50 p-2">
+        <div className="max-h-[480px] xl:max-h-[800px] overflow-auto rounded-lg border border-slate-200 bg-slate-50 p-2">
           <img
             src={source.previewUrl}
             alt={source.name}
@@ -98,7 +98,7 @@ export default function FilePreview({ upload, document }: FilePreviewProps) {
           key={zoomPercent}
           src={`${source.previewUrl}#toolbar=0&zoom=${zoomPercent}`}
           title={source.name}
-          className="h-[480px] w-full rounded-lg border border-slate-200"
+          className="h-[480px] xl:h-[800px] w-full rounded-lg border border-slate-200"
         />
       );
     }
