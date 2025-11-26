@@ -263,6 +263,7 @@ services:
     volumes:
       - hf-cache:/root/.cache/huggingface
     restart: unless-stopped
+
   backend:
     build:
       context: .
@@ -292,7 +293,7 @@ services:
       dockerfile: frontend/Dockerfile
     network_mode: "host"
     environment:
-      - NEXT_PUBLIC_API_URL=http://192.168.29.16:8003
+      - NEXT_PUBLIC_API_URL=http://localhost:8003
       - PORT=3003
     depends_on:
       - backend

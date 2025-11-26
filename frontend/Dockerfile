@@ -7,6 +7,8 @@ FROM node:20-alpine AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY frontend .
+# ビルド時に公開用環境変数を取り込む
+COPY .env.frontend .env.production.local
 RUN npm run build
 
 FROM node:20-alpine AS runner
