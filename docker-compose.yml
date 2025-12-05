@@ -26,6 +26,8 @@ services:
       - .env.backend
     volumes:
       - hf-cache:/root/.cache/huggingface
+    ports:
+      - "8201:8000"
     restart: unless-stopped
 
   vllm-4b:
@@ -51,6 +53,8 @@ services:
       --max-model-len 65536
       --host 0.0.0.0
       --port 8000
+    ports:
+      - "8202:8000"
 
   vllm-2b-fp8:
     <<: *vllm-base
@@ -76,6 +80,8 @@ services:
       --max-model-len 65536
       --host 0.0.0.0
       --port 8000
+    ports:
+      - "8203:8000"
 
   vllm-4b-fp8:
     <<: *vllm-base
@@ -101,6 +107,8 @@ services:
       --max-model-len 65536
       --host 0.0.0.0
       --port 8000
+    ports:
+      - "8204:8000"
 
   vllm-8b:
     <<: *vllm-base
@@ -128,6 +136,8 @@ services:
       --max-model-len 65536
       --host 0.0.0.0
       --port 8000
+    ports:
+      - "8205:8000"
 
   vllm-8b-fp8:
     <<: *vllm-base
@@ -156,6 +166,8 @@ services:
       --max-model-len 65536
       --host 0.0.0.0
       --port 8000
+    ports:
+      - "8206:8000"
 
   vllm-32b:
     <<: *vllm-base
@@ -181,6 +193,8 @@ services:
       --tensor-parallel-size 2
       --host 0.0.0.0
       --port 8000
+    ports:
+      - "8207:8000"
 
   vllm-32b-fp8:
     <<: *vllm-base
@@ -207,6 +221,8 @@ services:
       --tensor-parallel-size 2
       --host 0.0.0.0
       --port 8000
+    ports:
+      - "8208:8000"
   deepseek-ocr:
     image: vllm/vllm-openai:nightly
     container_name: notevlm-deepseek-ocr
@@ -234,6 +250,8 @@ services:
       - .env.backend
     volumes:
       - hf-cache:/root/.cache/huggingface
+    ports:
+      - "8209:8000"
     restart: unless-stopped
   chandra-ocr:
     image: vllm/vllm-openai:latest
@@ -262,6 +280,8 @@ services:
       - .env.backend
     volumes:
       - hf-cache:/root/.cache/huggingface
+    ports:
+      - "8210:8000"
     restart: unless-stopped
 
   backend:
